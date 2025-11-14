@@ -1,0 +1,6 @@
+# Cargo configuration for WASM builds
+[target.wasm32-unknown-unknown]
+linker = "rust-lld"
+
+[build]
+target = "wasm32-unknown-unknown"

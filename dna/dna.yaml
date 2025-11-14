@@ -1,0 +1,19 @@
+---
+manifest_version: "1"
+name: mycelix_mail
+integrity:
+  network_seed: mycelix-mail-network-v1
+  properties: ~
+  zomes:
+    - name: mycelix_mail_integrity
+      bundled: integrity.wasm
+coordinator:
+  zomes:
+    - name: mail_messages
+      bundled: mail_messages.wasm
+      dependencies:
+        - name: mycelix_mail_integrity
+    - name: trust_filter
+      bundled: trust_filter.wasm
+      dependencies:
+        - name: mycelix_mail_integrity
